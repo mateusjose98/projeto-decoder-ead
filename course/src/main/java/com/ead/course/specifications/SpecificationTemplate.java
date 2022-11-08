@@ -56,7 +56,7 @@ public class SpecificationTemplate {
         return (root, query, cb) -> {
             query.distinct(true);
             Join<CourseModel, CourseUserModel> courseProd = root.join("coursesUsers");
-            return cb.equal(courseProd.get("courseId"), userId);
+            return cb.equal(courseProd.get("userId"), userId);
         };
     }
 }

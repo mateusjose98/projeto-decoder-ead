@@ -1,5 +1,6 @@
 package com.ead.course.models;
 
+
 import com.ead.course.enums.CourseLevel;
 import com.ead.course.enums.CourseStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -54,5 +55,9 @@ public class CourseModel implements Serializable {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
     private Set<CourseUserModel> coursesUsers;
+
+    public CourseUserModel convertToCourseUserModel(UUID userID){
+        return new CourseUserModel(null, userID, this);
+    }
 
 }

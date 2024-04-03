@@ -1,5 +1,5 @@
 server:
-  port: 8087
+  port: 8002
   servlet:
     context-path: '/ead-authuser/'
 
